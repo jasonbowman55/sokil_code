@@ -9,7 +9,7 @@
 % 2. Magnitude (linear or dB)
 % 3. Phase (radians)
 
-function nanovna_data_analysis(x)
+function output = nanovna_data_analysis(x)
     % x = list of indexes used in file naming convention
     % x = 1:5, 6:10, or 11:13
     for i = 1:length(x) % Goes through each whole file
@@ -57,5 +57,6 @@ function nanovna_data_analysis(x)
         phase_SER(n) = sqrt(sum(residuals.^2) / (len - 1));  % Standard error of regression
     end
 
-    create_plot_with_error(freq_avg, mag_avg, phase_avg, mag_SER, phase_SER);
+    %create_plot_with_error(freq_avg, mag_avg, phase_avg, mag_SER, phase_SER);
+    output = [freq_avg; mag_avg; phase_avg; mag_SER; phase_SER];
 end
