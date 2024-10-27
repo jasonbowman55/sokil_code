@@ -44,6 +44,8 @@ function output = nanovna_data_analysis(x)
         phase_avg(i) = mean(phase(:,i));
     end
     freq_avg = freq_avg(1):((freq_avg(len)-freq_avg(1))/(len-1)):freq_avg(len);
+    %mag_avg = abs(mag_avg);
+    %mag_avg = db2mag(mag_avg);
 
     l = length(x); % set of data points at same frequency
     for n = 1:len % Goes thorugh each point

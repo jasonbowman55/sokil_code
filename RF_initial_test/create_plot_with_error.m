@@ -7,7 +7,7 @@ function create_plot_with_error(freq_avg, mag_avg, phase_avg, mag_SER, phase_SER
     plot(freq_avg, mag_avg, 'DisplayName', 'Data');
     hold on;
     % Add error bars showing the standard error of the regression
-    errorbar(freq_avg, mag_avg, mag_SER .* ones(size(freq_avg)), 'r.', 'DisplayName', 'SER Error Bars');
+    %errorbar(freq_avg, mag_avg, mag_SER .* ones(size(freq_avg)), 'r.', 'DisplayName', 'SER Error Bars');
     xlabel('Frequency [MHz]');
     ylabel('Magnitude |S11|');
     legend('Location', 'best');
@@ -20,7 +20,7 @@ function create_plot_with_error(freq_avg, mag_avg, phase_avg, mag_SER, phase_SER
     % Add error bars showing the standard error of the regression
     errorbar(freq_avg, phase_avg, phase_SER .* ones(size(freq_avg)), 'r.', 'DisplayName', 'SER Error Bars');
     xlabel('Frequency [MHz]');
-    ylabel('Phase');
+    ylabel('Phase [rads]');
     legend('Location', 'best');
     title('Phase vs. Frequency [MHz] with Standard Error of Regression');
     hold off;
@@ -33,6 +33,7 @@ function create_plot_with_error(freq_avg, mag_avg, phase_avg, mag_SER, phase_SER
     plot3(real(complex),imag(complex), freq_avg);
     xlabel('Real');
     ylabel('Imaginary');
+    zlabel('Frequency [MHz]')
     title('Real vs. Imaginary');
     %scatter(1:807, freq_avg(2:808)-freq_avg(1:807));
 end
