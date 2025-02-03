@@ -1,0 +1,7 @@
+livox-lvx
+ipykernel
+numpy
+tqdm
+scipy
+matplotlib
+pandas
