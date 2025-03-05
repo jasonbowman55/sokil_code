@@ -1,0 +1,6 @@
+function ptCloud = downsampleAllPointClouds(ptClouds, downsampling)
+    for i = 1:length(ptClouds)
+        ptClouds{i} = Sokil_LiDAR.downsampleSinglePointCloud(ptClouds{i},downsampling);
+    end
+    return ptClouds
+end
