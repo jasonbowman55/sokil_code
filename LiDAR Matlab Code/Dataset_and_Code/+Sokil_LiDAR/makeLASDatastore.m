@@ -7,6 +7,5 @@ folderPath = 'Dataset';
 filePattern = fullfile(folderPath,'PtCloud*.las');
 
 %Create a datastore, essentially this creates a list of the files to call
-ds = fileDatastore(filePattern, 'ReadFcn', @Sokil_LiDAR.LASToSinglePointCloud);
-
+ds = fileDatastore(filePattern, 'ReadFcn', @Sokil_LiDAR.convertSingleLASToPointCloud);
 end

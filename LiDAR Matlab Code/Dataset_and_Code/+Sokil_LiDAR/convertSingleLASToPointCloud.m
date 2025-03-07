@@ -1,4 +1,4 @@
-function ptCloud = LASToSinglePointCloud(lasFileLocation)
+function ptCloud = convertSingleLASToPointCloud(lasFileLocation)
     % LAS2POINTCLOUD creates a downsampled matlab pointcloud based on an
     % input las file
     % OUTPUT = LAS2POINTCLOUD(LASFILELOCATION,DOWNSAMPLE) takes the las
