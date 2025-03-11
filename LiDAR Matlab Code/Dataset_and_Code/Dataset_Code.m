@@ -19,8 +19,8 @@ folderPath_PLY = 'PLY_Dataset';
 
 %These commands convert the matlab point clouds above, and save them in
 %their respective folders 
-%Sokil_LiDAR.convertAllPointCloudsToPCD(pointClouds, folderPath_PCD);
-%Sokil_LiDAR.convertAllPointCloudsToPLY(pointClouds, folderPath_PLY);
+Sokil_LiDAR.convertAllPointCloudsToPCD(pointClouds, folderPath_PCD);
+Sokil_LiDAR.convertAllPointCloudsToPLY(pointClouds, folderPath_PLY);
 
 %Single Pointcloud examples: 
 folderPath = 'Dataset';
@@ -35,4 +35,10 @@ Sokil_LiDAR.convertSinglePointCloudToPCD(TM62PointCloud,folderPath_PCD, "JUST-TM
 %For LAS FILE Conversion
 Sokil_LiDAR.convertSingleLAStoPCD(filepattern,folderPath_PCD, "JUST-TM-62-Test2");
 Sokil_LiDAR.convertSingleLAStoPLY(filepattern,folderPath_PCD, "JUST-TM-62-Test2");
+
+filename = 'pointCloud1.pcd'
+filepattern = fullfile(folderPath_PCD,filename)
+ptCloud = Sokil_LiDAR.convertSinglePCDToPointCloud(filepattern)
+Sokil_LiDAR.plotPointCloud(ptCloud, "pcd test")
+
 

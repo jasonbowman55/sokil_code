@@ -5,7 +5,8 @@ function convertSinglePointCloudToPCD(ptCloud,folderPath,pcdFilename)
         mkdir(folderPath);
     end
         colorData = im2uint8(ptCloud.Color);
-        ptCloudMod = pointCloud(ptCloud.Location, 'Color', colorData);
+        intensityData = ptCloud.Intensity;
+        ptCloudMod = pointCloud(ptCloud.Location, 'Color', colorData, 'Intensity',intensityData);
         outputFile = pcdFilename + '.pcd';
         filePath = fullfile(folderPath,outputFile);
         pcwrite(ptCloudMod, filePath);
