@@ -1,0 +1,24 @@
+%% Map PointCloud Points 
+addpath('+Sokil_LiDAR')
+
+%file = 'laptopscan_dronelab.pcd';
+%file = '4_6_verticalFromShan3.pcd';
+file = '4_6_10m.pcd';
+ptCloud = Sokil_LiDAR.convertSinglePCDToPointCloud(file);
+disp(ptCloud)
+%pcviewer(ptCloud, "ColorSource", "Intensity");
+%ptCloud = Sokil_LiDAR.downsampleSinglePointCloud(ptCloud, 2000000);
+disp(ptCloud)
+
+%[ptCloudFiltered, inlierIndices, outlierIndices] = pcdenoise(ptCloud, 'Threshold', .1); % Adjust the threshold as needed
+croppedPtCloud = Sokil_LiDAR.cropPointCloud(ptCloud,-20,20,-20,20,-10,10);
+fixElevationPtCloud = Sokil_LiDAR.normalizePointCloudElevation(ptCloud)
+cropPtCloud = Sokil_LiDAR.crop
+%noGroundPtCloud = Sokil_LiDAR.removePointCloudGround(croppedPtCloud);
+Sokil_LiDAR.plotPointCloud(fixElevationPtCloud, "fix orientation ptcloud")
+
+
+
+
+
+

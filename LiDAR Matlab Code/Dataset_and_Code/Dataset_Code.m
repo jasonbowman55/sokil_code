@@ -17,28 +17,30 @@ pointCloud1 = pointClouds{1}; %This is how you access a single point cloud from 
 folderPath_PCD = 'PCD_Dataset';
 folderPath_PLY = 'PLY_Dataset';
 
+Sokil_LiDAR.convertSinglePointCloudToPCD(pointCloud1,folderPath_PCD, "pointCloud1");
+
 %These commands convert the matlab point clouds above, and save them in
 %their respective folders 
-Sokil_LiDAR.convertAllPointCloudsToPCD(pointClouds, folderPath_PCD);
-Sokil_LiDAR.convertAllPointCloudsToPLY(pointClouds, folderPath_PLY);
+%Sokil_LiDAR.convertAllPointCloudsToPCD(pointClouds, folderPath_PCD);
+%Sokil_LiDAR.convertAllPointCloudsToPLY(pointClouds, folderPath_PLY);
 
 %Single Pointcloud examples: 
-folderPath = 'Dataset';
-filename = 'Just-TM-62.las';
-filepattern = fullfile(folderPath,filename);
-TM62PointCloud = Sokil_LiDAR.convertSingleLASToPointCloud(filepattern);
-TM62PointCloud = Sokil_LiDAR.correctSinglePointCloudOrientation(TM62PointCloud);
-Sokil_LiDAR.plotPointCloud(TM62PointCloud, "Point Cloud")
+%folderPath = 'Dataset';
+%filename = 'Just-TM-62.las';
+%filepattern = fullfile(folderPath,filename);
+%TM62PointCloud = Sokil_LiDAR.convertSingleLASToPointCloud(filepattern);
+%TM62PointCloud = Sokil_LiDAR.correctSinglePointCloudOrientation(TM62PointCloud);
+%Sokil_LiDAR.plotPointCloud(TM62PointCloud, "Point Cloud")
 %For Matlab point cloud file saving
-Sokil_LiDAR.convertSinglePointCloudToPLY(TM62PointCloud,folderPath_PLY, "JUST-TM-62");
-Sokil_LiDAR.convertSinglePointCloudToPCD(TM62PointCloud,folderPath_PCD, "JUST-TM-62");
+%Sokil_LiDAR.convertSinglePointCloudToPLY(TM62PointCloud,folderPath_PLY, "JUST-TM-62");
+%Sokil_LiDAR.convertSinglePointCloudToPCD(TM62PointCloud,folderPath_PCD, "JUST-TM-62");
 %For LAS FILE Conversion
-Sokil_LiDAR.convertSingleLAStoPCD(filepattern,folderPath_PCD, "JUST-TM-62-Test2");
-Sokil_LiDAR.convertSingleLAStoPLY(filepattern,folderPath_PCD, "JUST-TM-62-Test2");
+%Sokil_LiDAR.convertSingleLAStoPCD(filepattern,folderPath_PCD, "JUST-TM-62-Test2");
+%Sokil_LiDAR.convertSingleLAStoPLY(filepattern,folderPath_PLY, "JUST-TM-62-Test2");
 
-filename = 'pointCloud1.pcd'
-filepattern = fullfile(folderPath_PCD,filename)
-ptCloud = Sokil_LiDAR.convertSinglePCDToPointCloud(filepattern)
-Sokil_LiDAR.plotPointCloud(ptCloud, "pcd test")
+%filename = 'pointCloud1.pcd'
+%filepattern = fullfile(folderPath_PCD,filename)
+%ptCloud = Sokil_LiDAR.convertSinglePCDToPointCloud(filepattern)
+%Sokil_LiDAR.plotPointCloud(ptCloud, "pcd test")
 
 

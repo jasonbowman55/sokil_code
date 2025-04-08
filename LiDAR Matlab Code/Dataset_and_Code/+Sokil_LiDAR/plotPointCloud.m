@@ -3,7 +3,8 @@ function plotPointCloud(ptCloud, txt)
 % title of the input string txt
     figure;
     pcshow(ptCloud,"MarkerSize",10,"ColorSource", "Intensity")
-    title('Point Cloud' , txt);
+    title(txt);
+    colormap(jet);
     xlabel('X');
     ylabel('Y');
     zlabel('Z');
