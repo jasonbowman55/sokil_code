@@ -5,7 +5,6 @@ function viewPointClouds(ptClouds)
          Sokil_LiDAR.plotPointCloud(ptClouds{i},"PointCloud" + string(i));
          next = input('Click enter in Command Window for next PointCloud.', 's');
          while next ~= char(32)
-            % Prompt user to add a bounding box
             next = input('Click enter in Command Window for next PointCloud.', 's');
          end
          close;
